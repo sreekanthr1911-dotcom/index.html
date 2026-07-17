@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OptionQuant Pro</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>📈 OptionQuant Pro</h1>
+    <h3>Professional Fair Value Calculator</h3>
+
+    <div class="card">
+
+        <label>Spot Price</label>
+        <input type="number" id="spot" placeholder="25000">
+
+        <label>Strike Price</label>
+        <input type="number" id="strike" placeholder="25100">
+
+        <label>Market Premium</label>
+        <input type="number" id="premium" placeholder="72">
+
+        <label>Implied Volatility (%)</label>
+        <input type="number" id="iv" placeholder="14">
+
+        <label>Days to Expiry</label>
+        <input type="number" id="days" placeholder="5">
+
+        <label>Risk Free Rate (%)</label>
+        <input type="number" id="rate" value="6.5">
+
+        <label>Option Type</label>
+
+        <select id="type">
+            <option value="call">Call Option</option>
+            <option value="put">Put Option</option>
+        </select>
+
+        <button onclick="calculateOption()">
+            Calculate Fair Value
+        </button>
+
+    </div>
+
+    <div class="results">
+
+        <h2>Results</h2>
+
+        <p>Black-Scholes Price :
+            <span id="bsPrice">--</span>
+        </p>
+
+        <p>Status :
+            <span id="status">--</span>
+        </p>
+
+        <p>Difference :
+            <span id="difference">--</span>
+        </p>
+
+    </div>
+
+</div>
+
+<script src="blackscholes.js"></script>
+
+</body>
+</html>
